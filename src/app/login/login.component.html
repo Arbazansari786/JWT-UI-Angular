@@ -1,0 +1,16 @@
+<div class="container mt-5">
+
+    <div class="card" style="padding: 20px;" >
+    <form  #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+        <input type="text" ngModel placeholder="Enter your userName" 
+        id="userName" class="form-control mb-3" name="userName">
+
+        <input type="password"ngModel placeholder="Enter your password" 
+        id="userPassword" class="form-control mb-3" name="userPassword">
+        
+        <input type="submit" value="Login" 
+        class="btn btn-outline-primary form-control  0">
+    </form>
+</div>
+
+</div>
