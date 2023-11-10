@@ -17,6 +17,19 @@ import { AuthInterceptor } from './_auth/auth.interceptor';
 import { UserService } from './_services/user.service';
 import { ForUserComponent } from './for-user/for-user.component';
 import { ForAdminComponent } from './for-admin/for-admin.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { AddNewProductComponent } from './add-new-product/add-new-product.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { DragDirective } from './drag.directive';
+import { ShowAllProductsComponent } from './show-all-products/show-all-products.component';
+import {MatTableModule} from '@angular/material/table';
+
+
+
 
 @NgModule({
   declarations: [
@@ -28,14 +41,24 @@ import { ForAdminComponent } from './for-admin/for-admin.component';
     HeaderComponent,
     ForbiddenComponent,
     ForUserComponent,
-    ForAdminComponent
+    ForAdminComponent,
+    AddNewProductComponent,
+    DragDirective,
+    ShowAllProductsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatGridListModule,
+    MatTableModule
   ],
   providers: [
     authGuard,

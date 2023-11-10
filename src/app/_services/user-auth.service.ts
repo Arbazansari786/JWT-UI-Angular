@@ -11,7 +11,7 @@ export class UserAuthService {
       localStorage.setItem('roles',JSON.stringify(roles));
   }
 
-  public getRoles():[]{
+  public getRoles():any{
     const roles= localStorage.getItem('roles');
     console.log(roles);
     return roles==null?'false':JSON.parse(roles);
@@ -39,6 +39,19 @@ export class UserAuthService {
     localStorage.clear();
   }
 
+  public isAdmin(){
+    const roles=this.getRoles();
+    console.log(roles);
+    if(roles==false)
+      return roles;
+    return roles[0].roleName==='admin';
+  }
 
+  public isUser(){
+    const roles=this.getRoles();
+    if(roles==false)
+      return roles;
+    return roles[0].roleName==='user';
+  }
 
 }

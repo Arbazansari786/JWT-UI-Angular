@@ -1,16 +1,31 @@
 <div class="container mt-5">
 
-    <div class="card" style="padding: 20px;" >
-    <form  #loginForm="ngForm" (ngSubmit)="login(loginForm)">
-        <input type="text" ngModel placeholder="Enter your userName" 
-        id="userName" class="form-control mb-3" name="userName">
+    <div class="card" style="padding: 20px;">
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+            <mat-form-field appearance="outline" class="w-100 mb-3">
+                <mat-label>Username</mat-label>
+                <input matInput ngModel name="userName" placeholder="Enter your Username" id="userName" >
+                <mat-hint>Username</mat-hint>
+              </mat-form-field>
 
-        <input type="password"ngModel placeholder="Enter your password" 
-        id="userPassword" class="form-control mb-3" name="userPassword">
-        
-        <input type="submit" value="Login" 
-        class="btn btn-outline-primary form-control  0">
-    </form>
-</div>
+              <mat-form-field appearance="outline" class="w-100 mb-3">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput ngModel name="userPassword" placeholder="Enter your Password" id="userPassword">
+                <mat-hint>Password</mat-hint>
+              </mat-form-field>
+
+              <button type="submit" class="w-100" mat-raised-button color="primary">Login </button>
+              
+              
+            
+            <!-- <input type="text" ngModel placeholder="Enter your userName" id="userName" class="form-control mb-3"
+                name="userName">
+
+            <input type="password" ngModel placeholder="Enter your password" id="userPassword" class="form-control mb-3"
+                name="userPassword"> -->
+
+            <!-- <input type="submit" value="Login" class="btn btn-outline-primary form-control  0"> -->
+        </form>
+    </div>
 
 </div>

@@ -8,15 +8,19 @@ import { LoginComponent } from './login/login.component';
 import { authGuard } from './_auth/auth.guard';
 import { ForUserComponent } from './for-user/for-user.component';
 import { ForAdminComponent } from './for-admin/for-admin.component';
+import { AddNewProductComponent } from './add-new-product/add-new-product.component';
+import { ShowAllProductsComponent } from './show-all-products/show-all-products.component';
 
 const routes: Routes = [
-  {path:'home',component:HomeComponent},
+  {path:'',component:HomeComponent},
   {path:'admin',component:AdminComponent,canActivate:[authGuard],data:{roles:['admin']}},
   {path:'user',component:UserComponent,canActivate:[authGuard],data:{roles:['user']}},
   {path:'forbidden',component:ForbiddenComponent},
   {path:'login',component:LoginComponent},
   {path:'foruser',component:ForUserComponent,canActivate:[authGuard],data:{roles:['user']}},
-  {path:'foradmin',component:ForAdminComponent,canActivate:[authGuard],data:{roles:['admin']}}
+  {path:'foradmin',component:ForAdminComponent,canActivate:[authGuard],data:{roles:['admin']}},
+  {path:'addNewProduct',component:AddNewProductComponent,canActivate:[authGuard],data:{roles:['admin']}},
+  {path:'ShowAllProducts', component:ShowAllProductsComponent,canActivate:[authGuard],data:{roles:['admin']}}
 
 ];
 
